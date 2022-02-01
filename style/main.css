@@ -10,48 +10,88 @@
 }
 
 /** elementos base **/
+html {
+  background-color: var(--preto);
+}
+
 body {
   background: var(--preto);
   font-family: "Arial", Times, serif;
   color: white;
+
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%),
+    url("../img/capa-filme-principal.jpg") no-repeat;
+
+  height: 100vh;
+  background-size: cover;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 header .container {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  padding: 15px;
+}
+
+header .container .secoes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header .container .conta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header .container .conta .icon {
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+header .container .conta .profile-image {
+  width: 40px;
 }
 
 header .logo {
   margin-left: 5px;
+  margin-right: 20px;
   color: var(--vermelho);
   font-family: "Bebas Neue", cursive;
   font-size: 40px;
+  cursor: pointer;
 }
 
-header nav a {
+header nav,
+div a {
   text-decoration: none;
   color: #aaa;
   margin-right: 10px;
 }
 
-header nav a:hover {
+header nav,
+div a:hover {
   color: #fff;
 }
 
 .container {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 /** filme principal **/
 .filme-principal {
   font-size: 16px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
-    url("../img/capa-filme-principal.jpg");
-
-  height: 400px;
-  background-size: cover;
+  height: 75vh;
 
   display: flex;
   flex-direction: column;
@@ -60,33 +100,51 @@ header nav a:hover {
 }
 
 .filme-principal .descricao {
-  margin: 10px;
   margin-bottom: 40px;
+  width: 50%;
 }
 
 .filme-principal .titulo {
   margin-top: 20px;
-  font-size: 40px;
+  font-size: 70px;
+  width: 50%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
 
 .filme-principal .botao {
-  background-color: rgba(0, 0, 0, 0.5);
   border: none;
-  color: white;
 
-  padding: 15px 30px;
+  padding: 4px 16px 8px 16px;
   margin-right: 15px;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: bolder;
 
   cursor: pointer;
   transition: 0.3s ease all;
 }
 
-.filme-principal .botao:hover {
+.botao.assistir {
   background-color: white;
   color: black;
+}
+
+.botao.assistir:hover {
+  background-color: rgb(173, 173, 173);
+}
+
+.botao.info {
+  background-color: #747265;
+  color: white;
+}
+
+.botao.info:hover {
+  background-color: #74726560;
+}
+
+.botao .icon {
+  margin-top: 5px;
+  font-size: 20px;
 }
 
 .filme-principal .botao svg {
@@ -101,6 +159,7 @@ header nav a:hover {
   height: 100%;
   width: 100%;
   display: block;
+  cursor: pointer;
 }
 
 .carrosel-filmes {
